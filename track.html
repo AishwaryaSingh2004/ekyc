@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 800px;
+            background: #333;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 6px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .form-actions button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-actions button:hover {
+            opacity: 0.9;
+        }
+
+        @media (min-width: 768px) {
+            .form-container {
+                padding: 60px;
+            }
+
+            .form-header h1 {
+                font-size: 36px;
+            }
+
+            .form-actions button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Track Status</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="application-type"> Bank Name</label>
+                <select id="application-type" required>
+                    <option value="">----- Select -----</option>
+                    <option value="type1"> SBI </option>
+                    <option value="type2"> HDFC </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="login id">Login Id</label>
+                <input type="text" id="login id" placeholder="Enter your ID">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+           
+            <div class="form-actions">
+                <button type="submit">Track Status</button>
+                <button type="reset" style="background-color: #ff4d4d;">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

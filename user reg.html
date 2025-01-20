@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            background: #444;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-header h1 {
+            font-size: 26px;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="password"],
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #555;
+            border-radius: 6px;
+            background-color: #555;
+            color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .form-group .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group .radio-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .form-actions button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .form-actions .submit {
+            background-color: #007bff;
+        }
+
+        .form-actions .cancel {
+            background-color: #dc3545;
+        }
+
+        .form-actions button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>User Registration</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="passport-office"> Bank* </label>
+                <select id="passport-office">
+                    <option value="">-- Select --</option>
+                    <option value="office1"> SBI </option>
+                    <option value="office2"> HDFC</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="given-name">Given Name*</label>
+                <input type="text" id="given-name" placeholder="Enter your given name">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth*</label>
+                <input type="date" id="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail ID*</label>
+                <input type="text" id="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="login-id">Login ID*</label>
+                <input type="text" id="login-id" placeholder="Enter your login ID">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password*</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password*</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password">
+            </div>
+
+            
+
+            <div class="form-actions">
+                <button type="submit" class="submit">Submit</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
