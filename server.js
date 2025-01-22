@@ -1,64 +1,69 @@
-// Import required modules
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3019
+const port = 3001; // Port number for the server
 
 // Initialize Express app
 const app = express();
-
-app.listen(port,()=>{
-    console.log("Server started")
-})
-const PORT = 2019;
-
-// Middleware to parse form data
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname))); // Serve static files
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+mongoose.connect('mongodb://127.0.0.1:27017/student');
+const db = mongoose.connection;
+db.once('open', () => {
+    console.log('Mongodb connection successful');
 })
-    .then(() => console.log('MongoDB connection successful'))
-    .catch(err => console.error('MongoDB connection failed:', err));
 
-// Define Mongoose schema and model
-const studentSchema = new mongoose.Schema({
-    Username: { type: String, required: true },
-    Password: { type: String, required: true },
+// Define Mongoose Schema
+const userSchema = new mongoose.Schema({
+    bank: { type: String, required: true },
+    givenName: { type: String, required: true },
+    dateOfBirth: { type: Date, required: true },
+    emailID: { type: String, required: true, unique: true },
+    loginID: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+})
+
+// Create Mongoose Model
+const Users = mongoose.model('Users', userSchema);
+
+// Serve HTML file on root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'userreg.html'));
 });
 
-const Student = mongoose.model('Student', studentSchema);
-
-// Serve static files (HTML and CSS)
-app.use(express.static(path.join(__dirname)));
-
-// Serve the form page
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'next.html'));
+app.get('/submission', (req ,res) => {
+    res.sendFile(path.join(__dirname, 'submission.html'));
 });
 
 // Handle form submissions
-app.post('/submit', async (req, res) => {
-    try {
-        const { registerNumber, name, email, branch } = req.body;
+app.post('/post', async (req, res) => {
+        // Destructure the form data from request body
+        const { bank, givenName, dateOfBirth, emailID, loginID, password } = req.body;
 
-        const newStudent = new Student({
-            registerNumber,
-            name,
-            email,
-            branch
+        // Create a new user instance
+        const user = new Users({
+            bank,
+            givenName,
+            dateOfBirth,
+            emailID,
+            loginID,
+            password,
         });
+        try{
+        // Save the user to the database
+        await user.save();
+        console.log('User saved:', user);
 
-        await newStudent.save();
-        res.send('Form submission successful');
-    } catch (err) {
-        res.status(500).send('Error saving data');
+        res.send('Form Submission Successful');
+    } catch (error) {
+        console.error('Error saving user:', error);
+        res.status(500).send('Error occurred during form submission');
     }
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server started on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log("Server started");
 });
