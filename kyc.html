@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)https://krypt-verse.netlify.app/ -->
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" type="image/svg+xml" href="./KryptVerse_files/logo-a023a026.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>KryptVerse</title>
+        <title>eKYC2025</title>
         <script type="module" crossorigin="" src="./KryptVerse_files/index-82756761.js.download"></script>
         <link rel="stylesheet" href="./KryptVerse_files/index-3b130adc.css">
         <link type="text/css" rel="stylesheet" href="./KryptVerse_files/css2">
         <link rel="stylesheet" href="index-3b130adc.css">
-        <script src="index20.js"></script>
+        <script src="block.js"></script>
     </head>
     <body data-new-gr-c-s-check-loaded="14.1207.0" data-gr-ext-installed="">
         <div id="root">
@@ -21,10 +20,9 @@
                             <img src="./KryptVerse_files/logo-a023a026.png" alt="logo" class="w-40 cursor-pointer">
                         </div>
                         <ul class="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-                            <li class="mx-4 undefined">Market</li>
-                            <li class="mx-4 undefined">Exchange</li>
-                            <li class="mx-4 undefined">CryptoCurrency</li>
-                            <li class="mx-4 undefined">Wallets</li>
+                            
+                            <li class="mx-4 undefined">FAQ</li>
+                            <li class="mx-4 undefined">Contact Us</li>
                         </ul>
                         <div class="flex relative">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" font-size="28" class="text-white md:hidden cursor-pointer" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -39,12 +37,17 @@
                                     Secure Identity Verification<br>for the Modern World
                                 </h1>
                                 <p class="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">Effortlessly verify your identity using our decentralized eKYC platform. Seamlessly access global financial services with trust and security.</p>
-                                <button type="button" class="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]" fdprocessedid="myuyoe">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="text-white mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm144.1 454.9L437.7 677.8a8.02 8.02 0 0 1-12.7-6.5V353.7a8 8 0 0 1 12.7-6.5L656.1 506a7.9 7.9 0 0 1 0 12.9z"></path>
-                                    </svg>
-                                    <p class="text-white text-base font-semibold">Connect Wallet</p>
-                                </button>
+                                <button
+    type="button"
+    class="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
+    onclick="connectWallet()"
+>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="text-white mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm144.1 454.9L437.7 677.8a8.02 8.02 0 0 1-12.7-6.5V353.7a8 8 0 0 1 12.7-6.5L656.1 506a7.9 7.9 0 0 1 0 12.9z"></path>
+    </svg>
+    <p class="text-white text-base font-semibold">Connect Wallet</p>
+</button>
+
                                 <div class="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
                                     <div class="rounded-tl-2xl min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">Reliability</div>
                                     <div class="min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">Security</div>
@@ -72,12 +75,24 @@
                                     </div>
                                 </div>
                                 <div class="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-                                    <input placeholder="Username" type="text" step="0.0001" class="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism" value="" fdprocessedid="nojofo">
-                                    <input placeholder="Password" type="number" step="0.0001" class="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism" value="" fdprocessedid="qmtc8h">
-                                    <input placeholder="Enter Captcha" type="text" step="0.0001" class="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism" value="" fdprocessedid="2wcui">
-                                    <div class="h-[1px] w-full bg-gray-400 my-2"></div>
-                                    <a href="next.html">
-                                    <button type="button" class="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer" fdprocessedid="ywgec">Send now</button>
+                                    <!-- New Registration Button -->
+                                    <a href="user reg.html" class="w-full">
+                                    <button type="button" class="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer" onclick="newRegistration()">
+                                        New Registration
+                                    </button>
+                                     </a>
+                                    <!-- Existing Registration Button -->
+                                    <a href="login.html" class="w-full">
+                                    <button type="button" class="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer" onclick="existingRegistration()">
+                                        Existing Registration
+                                    </button>
+                                    </a>
+                                
+                                    <!-- Track Button -->
+                                    <a href="track.html" class="w-full">
+                                    <button type="button" class="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer" onclick="trackStatus()">
+                                        Track Status
+                                    </button>
                                     </a>
                                 </div>
                             </div>
@@ -139,10 +154,9 @@
                             <img src="./KryptVerse_files/logo-a023a026.png" alt="logo" class="w-32">
                         </div>
                         <div class="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-                            <p class="text-white text-base text-center mx-2">Market</p>
-                            <p class="text-white text-base text-center mx-2">Exchange</p>
-                            <p class="text-white text-base text-center mx-2">Tutorials</p>
-                            <p class="text-white text-base text-center mx-2">Wallets</p>
+                          
+                            <p class="text-white text-base text-center mx-2">FAQ</p>
+                            <p class="text-white text-base text-center mx-2">Contact Us</p>
                         </div>
                     </div>
                     <div class="flex justify-center items-center flex-col mt-5">
@@ -150,7 +164,7 @@
                     </div>
                     <div class="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "></div>
                     <div class="sm:w-[90%] w-full flex justify-between items-center mt-3">
-                        <p class="text-white text-left text-xs">@kryptverse2023</p>
+                        <p class="text-white text-left text-xs">@eKYC2025</p>
                         <p class="text-white text-right text-xs">All rights reserved</p>
                     </div>
                 </div>
@@ -380,7 +394,7 @@
                         position: absolute;
                         right: -50px;
                         bottom: 8px;
-                        box-shadow: rgba(0,0,0,.12) 0px 0px 10px;
+                        box-shadow: rgba(0,0, 0, 0.12) 0px 0px 10px;
                         height: 40px;
                         width: 40px;
                         background: #1671ee;
@@ -421,4 +435,4 @@
             <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div>
         </template>
     </grammarly-desktop-integration>
-</html>
+</html> 
