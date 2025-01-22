@@ -2,9 +2,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const port = 3019
 
 // Initialize Express app
 const app = express();
+
+app.listen(port,()=>{
+    console.log("Server started")
+})
 const PORT = 2019;
 
 // Middleware to parse form data
