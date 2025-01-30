@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Application Status</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            /* margin: 0;
-            padding: 0; */
-            background: url(tracking\ image.jpeg) no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            
-            
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap');
+        </style>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background: url('tracking image.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full viewport height */
+    width: 100%;
+    overflow: hidden; /* Prevents scrolling */
+    margin: 0;
+}
 
-        .form-container {
-            width: 80%;
-            max-width: 1700px;
-            padding: 50px;
-            border-radius: 10px;
-            /* min-height: 100vh; */
-            /* justify-content: center; */
-            background: rgba(28, 26, 26, 0.9); 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-        }
+.form-container {
+    width: 80%;
+    max-width: 1700px;
+    padding: 50px;
+    border-radius: 10px;
+    background: rgba(28, 26, 26, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    max-height: 90vh; /* Prevents exceeding viewport */
+    overflow: auto; /* Allows internal scrolling if necessary */
+    box-sizing: border-box; /* Ensures padding doesn’t add extra height */
+}
+
 
         .form-header {
             text-align: center;
